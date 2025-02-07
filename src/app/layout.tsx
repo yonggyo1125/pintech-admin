@@ -1,13 +1,11 @@
 import StyledComponentsRegistry from './registry'
 import Header from './global/ui/outlines/Header'
-import Footer from './global/ui/outlines/Footer'
 import { CommonProvider } from './global/contexts/CommonContext'
 import { Metadata } from 'next'
 import { getUserInfo } from './member/services/actions'
 import { UserProvider } from './global/contexts/UserContext'
 import 'react-datepicker/dist/react-datepicker.css'
 import './globals.css'
-import { after } from 'next/server'
 
 export const metadata: Metadata = {
   title: '사이트 관리자',
@@ -25,11 +23,12 @@ export default async function RootLayout({
       <body>
         <StyledComponentsRegistry>
           <UserProvider _userInfo={userInfo}>
-            <CommonProvider>
-              <Header />
-              <main className="main-content">{children}</main>
-              <Footer />
-            </CommonProvider>
+            <Header />
+            <main className="main-content">
+              <CommonProvider>
+                <section>{children}</section>
+              </CommonProvider>
+            </main>
           </UserProvider>
         </StyledComponentsRegistry>
       </body>
