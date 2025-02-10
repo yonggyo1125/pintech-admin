@@ -9,9 +9,24 @@ import { updateBoard } from '../services/actions'
 import ConfigForm from '../components/ConfigForm'
 import useMenuCode from '@/app/global/hooks/useMenuCode'
 
+const initialValue = {
+  open: false,
+  useEditor: false,
+  useEditorImage: false,
+  useAttachFile: false,
+  useComment: false,
+  listUnderView: false,
+  locationAfterWrting: 'list',
+  skin: 'default',
+  listAuthority: 'ALL',
+  viewAuthority: 'ALL',
+  writeAuthority: 'ALL',
+  commentAuthority: 'ALL',
+}
+
 const ConfigContainer = ({ bid }: { bid?: string } | undefined) => {
   useMenuCode('board', 'configWrite')
-  const [form, setForm] = useState({})
+  const [form, setForm] = useState(initialValue)
   const actionState = useActionState(updateBoard)
 
   const onChange = useCallback((e) => {
