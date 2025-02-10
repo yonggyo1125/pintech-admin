@@ -25,7 +25,7 @@ const UserProvider = ({ children, _userInfo }) => {
   }, [_userInfo])
 
   const value = {
-    state: { userInfo, isLogin: true, isAdmin: true },
+    state: { userInfo, isLogin, isAdmin },
     actions: { setUserInfo, setIsLogin, setIsAdmin },
   }
 

@@ -183,8 +183,6 @@ export const processLogin = async (params, formData: FormData) => {
  *
  */
 export const getUserInfo = async () => {
-  return
-  /*
   const cookie = await cookies()
   if (!cookie.has('token')) return
 
@@ -194,5 +192,5 @@ export const getUserInfo = async () => {
       const result = await res.json()
       return result.success && result.data
     }
-  } catch (err) {} */
+  } catch (err) {}
 }

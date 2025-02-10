@@ -35,12 +35,12 @@ export const TableRows = styled.table`
     th {
       background: #212121;
       color: #fff;
-      padding: 7px 10px;
+      padding: 10px;
       font-size: 1.15rem;
+    }
 
-      & + & {
-        border-left: 1px solid #f8f8f8;
-      }
+    th + th {
+      border-left: 1px solid #f8f8f8;
     }
   }
 
