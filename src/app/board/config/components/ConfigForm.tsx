@@ -40,6 +40,17 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
         name="useComment"
         value={form?.useComment ?? false}
       />
+      <input
+        type="hidden"
+        name="listUnderView"
+        value={form?.listUnderView ?? false}
+      />
+      <input
+        type="hidden"
+        name="locationAfterWriting"
+        value={form?.locationAfterWriting ?? 'list'}
+      />
+      <input type="hidden" name="skin" value={form?.skin ?? 'default'} />
 
       <TableCols>
         <tbody>
@@ -198,6 +209,10 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
                 미사용
               </span>
             </td>
+          </tr>
+          <tr>
+            <th>글보기페이지 목록</th>
+            <td></td>
           </tr>
         </tbody>
       </TableCols>
