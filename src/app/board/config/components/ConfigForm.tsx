@@ -212,7 +212,69 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
           </tr>
           <tr>
             <th>글보기페이지 목록</th>
-            <td></td>
+            <td>
+              <span onClick={() => onClick('listUnderView', true)}>
+                {form?.listUnderView ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                사용
+              </span>
+
+              <span onClick={() => onClick('listUnderView', false)}>
+                {form?.listUnderView ? (
+                  <MdRadioButtonUnchecked />
+                ) : (
+                  <MdRadioButtonChecked />
+                )}
+                미사용
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>글작성 후 이동</th>
+            <td>
+              <span onClick={() => onClick('locationAfterWriting', 'list')}>
+                {form?.locationAfterWriting === 'list' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                글 목록
+              </span>
+
+              <span onClick={() => onClick('locationAfterWriting', 'view')}>
+                {form?.locationAfterWriting === 'view' ? (
+                  <MdRadioButtonUnchecked />
+                ) : (
+                  <MdRadioButtonChecked />
+                )}
+                글 보기
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>게시판 스킨</th>
+            <td>
+              <span onClick={() => onClick('skin', 'default')}>
+                {form?.skin === 'default' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                기본(default)
+              </span>
+
+              <span onClick={() => onClick('skin', 'gallery')}>
+                {form?.skin === 'gallery' ? (
+                  <MdRadioButtonUnchecked />
+                ) : (
+                  <MdRadioButtonChecked />
+                )}
+                갤러리(gallery)
+              </span>
+            </td>
           </tr>
         </tbody>
       </TableCols>
