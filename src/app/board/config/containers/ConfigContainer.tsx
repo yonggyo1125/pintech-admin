@@ -18,8 +18,17 @@ const ConfigContainer = ({ bid }: { bid?: string } | undefined) => {
     setForm((form) => ({ ...form, [e.target.name]: e.target.value }))
   }, [])
 
+  const onClick = useCallback((field, value) => {
+    setForm((form) => ({ ...form, [field]: value }))
+  }, [])
+
   return (
-    <ConfigForm form={form} onChange={onChange} actionState={actionState} />
+    <ConfigForm
+      form={form}
+      onChange={onChange}
+      onClick={onClick}
+      actionState={actionState}
+    />
   )
 }
 
