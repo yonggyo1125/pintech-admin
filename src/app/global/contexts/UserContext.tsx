@@ -11,8 +11,14 @@ const UserContext = createContext({
 })
 
 const UserProvider = ({ children, _userInfo }) => {
-  const [userInfo, setUserInfo] = useState(_userInfo)
+  const user = {
+    email: 'user1@test.org',
+    name: '이이름',
+    _authorities: ['USER', 'ADMIN'],
+  }
+  const [userInfo, setUserInfo] = useState(user)
   const [isLogin, setIsLogin] = useState(_userInfo ? true : false)
+
   const [isAdmin, setIsAdmin] = useState(
     _userInfo && _userInfo._authorities.includes('ADMIN'),
   )
