@@ -270,9 +270,9 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
 
               <span onClick={() => onClick('locationAfterWriting', 'view')}>
                 {form?.locationAfterWriting === 'view' ? (
-                  <MdRadioButtonUnchecked />
-                ) : (
                   <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
                 )}
                 글 보기
               </span>
@@ -292,9 +292,9 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
 
               <span onClick={() => onClick('skin', 'gallery')}>
                 {form?.skin === 'gallery' ? (
-                  <MdRadioButtonUnchecked />
-                ) : (
                   <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
                 )}
                 갤러리(gallery)
               </span>
