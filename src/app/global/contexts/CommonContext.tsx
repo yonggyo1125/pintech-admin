@@ -7,6 +7,7 @@ import loadable from '@loadable/component'
 import useUser from '../hooks/useUser'
 
 const Side = loadable(() => import('../ui/outlines/Side'))
+const SubMenus = loadable(() => import('../components/SubMenus'))
 
 setDefaultLocale(ko)
 
@@ -38,7 +39,10 @@ const CommonProvider = ({ children }) => {
         <>
           <Helmet>{title && <title>{title}</title>}</Helmet>
           {isAdmin && <Side />}
-          {children}
+          <section>
+            {isAdmin && <SubMenus />}
+            {children}
+          </section>
         </>
       </HelmetProvider>
     </CommonContext.Provider>

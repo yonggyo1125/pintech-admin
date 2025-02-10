@@ -4,7 +4,7 @@ import ConfigList from '../components/ConfigList'
 import useMenuCode from '@/app/global/hooks/useMenuCode'
 
 const ConfigListContainer = () => {
-  useMenuCode('board')
+  useMenuCode('board', 'configList')
 
   return <ConfigList />
 }

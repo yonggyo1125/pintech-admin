@@ -4,7 +4,7 @@ import ConfigForm from '../components/ConfigForm'
 import useMenuCode from '@/app/global/hooks/useMenuCode'
 
 const ConfigContainer = ({ bid }: { bid?: string } | undefined) => {
-  useMenuCode('board')
+  useMenuCode('board', 'configWrite')
 
   return <ConfigForm />
 }
