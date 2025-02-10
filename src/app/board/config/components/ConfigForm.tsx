@@ -321,6 +321,41 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
         </tbody>
       </TableCols>
 
+      <SubTitle>게시판 권한</SubTitle>
+      <TableCols>
+        <tbody>
+          <tr>
+            <th>글목록 접근 권한</th>
+            <td>
+              <span onClick={() => onClick('listAuthority', 'ALL')}>
+                {form?.listAuthority === 'ALL' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                비회원 + 회원 + 관리자
+              </span>
+              <span onClick={() => onClick('listAuthority', 'USER')}>
+                {form?.listAuthority === 'USER' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                회원 + 관리자
+              </span>
+              <span onClick={() => onClick('listAuthority', 'ADMIN')}>
+                {form?.listAuthority === 'ADMIN' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                관리자
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </TableCols>
+
       <ButtonGroup width={450} className="button-group center">
         <BigButton type="reset" color="white" disabled={isPending}>
           다시입력
