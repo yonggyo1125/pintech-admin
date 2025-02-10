@@ -313,9 +313,9 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
                 name="category"
                 placeholder="분류 여러개는 엔터키를 눌러서 다음칸에 입력"
                 height={200}
-              >
-                {form?.category ?? ''}
-              </Textarea>
+                value={form?.category ?? ''}
+                onChange={onChange}
+              ></Textarea>
             </td>
           </tr>
         </tbody>
@@ -345,6 +345,96 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
               </span>
               <span onClick={() => onClick('listAuthority', 'ADMIN')}>
                 {form?.listAuthority === 'ADMIN' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                관리자
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <th>글보기 접근 권한</th>
+            <td>
+              <span onClick={() => onClick('viewAuthority', 'ALL')}>
+                {form?.viewAuthority === 'ALL' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                비회원 + 회원 + 관리자
+              </span>
+              <span onClick={() => onClick('viewAuthority', 'USER')}>
+                {form?.viewAuthority === 'USER' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                회원 + 관리자
+              </span>
+              <span onClick={() => onClick('viewAuthority', 'ADMIN')}>
+                {form?.viewAuthority === 'ADMIN' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                관리자
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <th>글쓰기 권한</th>
+            <td>
+              <span onClick={() => onClick('writeAuthority', 'ALL')}>
+                {form?.writeAuthority === 'ALL' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                비회원 + 회원 + 관리자
+              </span>
+              <span onClick={() => onClick('writeAuthority', 'USER')}>
+                {form?.writeAuthority === 'USER' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                회원 + 관리자
+              </span>
+              <span onClick={() => onClick('writeAuthority', 'ADMIN')}>
+                {form?.writeAuthority === 'ADMIN' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                관리자
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <th>댓글 작성권한</th>
+            <td>
+              <span onClick={() => onClick('commentAuthority', 'ALL')}>
+                {form?.commentAuthority === 'ALL' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                비회원 + 회원 + 관리자
+              </span>
+              <span onClick={() => onClick('commentAuthority', 'USER')}>
+                {form?.commentAuthority === 'USER' ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                회원 + 관리자
+              </span>
+              <span onClick={() => onClick('commentAuthority', 'ADMIN')}>
+                {form?.commentAuthority === 'ADMIN' ? (
                   <MdRadioButtonChecked />
                 ) : (
                   <MdRadioButtonUnchecked />
