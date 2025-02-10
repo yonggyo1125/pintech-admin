@@ -2,12 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import { MdRadioButtonUnchecked, MdRadioButtonChecked } from 'react-icons/md'
 import { TableCols } from '@/app/global/components/Tables'
-import { Input } from '@/app/global/components/FormComponents'
+import { Input, Textarea } from '@/app/global/components/FormComponents'
 import { BigButton, ButtonGroup } from '@/app/global/components/Buttons'
 import Messages from '@/app/global/components/Messages'
+import { SubTitle } from '@/app/global/components/StyledTitle'
 
 const StyledForm = styled.form`
   table {
+    margin-bottom: 30px;
+
     th {
       width: 180px;
     }
@@ -51,7 +54,28 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
         value={form?.locationAfterWriting ?? 'list'}
       />
       <input type="hidden" name="skin" value={form?.skin ?? 'default'} />
+      <input
+        type="hidden"
+        name="listAuthority"
+        value={form?.listAuthority ?? 'ALL'}
+      />
+      <input
+        type="hidden"
+        name="viewAuthority"
+        value={form?.viewAuthority ?? 'ALL'}
+      />
+      <input
+        type="hidden"
+        name="writeAuthority"
+        value={form?.writeAuthority ?? 'ALL'}
+      />
+      <input
+        type="hidden"
+        name="commentAuthority"
+        value={form?.commentAuthority ?? 'ALL'}
+      />
 
+      <SubTitle>기본 설정</SubTitle>
       <TableCols>
         <tbody>
           <tr>
@@ -278,6 +302,25 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
           </tr>
         </tbody>
       </TableCols>
+
+      <SubTitle>게시판 분류</SubTitle>
+      <TableCols>
+        <tbody>
+          <tr>
+            <th>분류</th>
+            <td>
+              <Textarea
+                name="category"
+                placeholder="분류 여러개는 엔터키를 눌러서 다음칸에 입력"
+                height={200}
+              >
+                {form?.category ?? ''}
+              </Textarea>
+            </td>
+          </tr>
+        </tbody>
+      </TableCols>
+
       <ButtonGroup width={450} className="button-group center">
         <BigButton type="reset" color="white" disabled={isPending}>
           다시입력
