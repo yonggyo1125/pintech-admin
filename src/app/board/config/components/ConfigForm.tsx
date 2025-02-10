@@ -111,6 +111,94 @@ const ConfigForm = ({ form, onChange, onClick, actionState }) => {
               />
             </td>
           </tr>
+          <tr>
+            <th>에디터 사용</th>
+            <td>
+              <span onClick={() => onClick('useEditor', true)}>
+                {form?.useEditor ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                사용
+              </span>
+
+              <span onClick={() => onClick('useEditor', false)}>
+                {form?.useEditor ? (
+                  <MdRadioButtonUnchecked />
+                ) : (
+                  <MdRadioButtonChecked />
+                )}
+                미사용
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>에디터 이미지 첨부</th>
+            <td>
+              <span onClick={() => onClick('useEditorImage', true)}>
+                {form?.useEditorImage ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                사용
+              </span>
+
+              <span onClick={() => onClick('useEditorImage', false)}>
+                {form?.useEditorImage ? (
+                  <MdRadioButtonUnchecked />
+                ) : (
+                  <MdRadioButtonChecked />
+                )}
+                미사용
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>파일 첨부</th>
+            <td>
+              <span onClick={() => onClick('useAttachFile', true)}>
+                {form?.useAttachFile ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                사용
+              </span>
+
+              <span onClick={() => onClick('useAttachFile', false)}>
+                {form?.useAttachFile ? (
+                  <MdRadioButtonUnchecked />
+                ) : (
+                  <MdRadioButtonChecked />
+                )}
+                미사용
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th>사용여부</th>
+            <td>
+              <span onClick={() => onClick('useComment', true)}>
+                {form?.useComment ? (
+                  <MdRadioButtonChecked />
+                ) : (
+                  <MdRadioButtonUnchecked />
+                )}
+                사용
+              </span>
+
+              <span onClick={() => onClick('useComment', false)}>
+                {form?.useComment ? (
+                  <MdRadioButtonUnchecked />
+                ) : (
+                  <MdRadioButtonChecked />
+                )}
+                미사용
+              </span>
+            </td>
+          </tr>
         </tbody>
       </TableCols>
       <ButtonGroup width={450} className="button-group center">
