@@ -10,6 +10,7 @@ import ConfigForm from '../components/ConfigForm'
 import useMenuCode from '@/app/global/hooks/useMenuCode'
 
 const initialValue = {
+  mode: 'add',
   open: false,
   useEditor: false,
   useEditorImage: false,
