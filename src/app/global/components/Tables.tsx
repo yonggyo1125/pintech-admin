@@ -22,6 +22,10 @@ export const TableCols = styled.table`
       border-top: 1px solid #ccc;
     }
   }
+
+  & + & {
+    margin-top: 30px;
+  }
 `
 
 export const TableRows = styled.table`
@@ -57,5 +61,9 @@ export const TableRows = styled.table`
     padding: 150px 0;
     text-align: center;
     font-size: 1.15rem;
+  }
+
+  & + & {
+    margin-top: 30px;
   }
 `
