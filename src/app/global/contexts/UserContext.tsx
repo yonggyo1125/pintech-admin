@@ -11,12 +11,7 @@ const UserContext = createContext({
 })
 
 const UserProvider = ({ children, _userInfo }) => {
-  const user = {
-    email: 'user1@test.org',
-    name: '이이름',
-    _authorities: ['USER', 'ADMIN'],
-  }
-  const [userInfo, setUserInfo] = useState(user)
+  const [userInfo, setUserInfo] = useState(_userInfo)
   const [isLogin, setIsLogin] = useState(_userInfo ? true : false)
 
   const [isAdmin, setIsAdmin] = useState(
@@ -30,7 +25,7 @@ const UserProvider = ({ children, _userInfo }) => {
   }, [_userInfo])
 
   const value = {
-    state: { userInfo, isLogin, isAdmin },
+    state: { userInfo, isLogin: true, isAdmin: true },
     actions: { setUserInfo, setIsLogin, setIsAdmin },
   }
 
