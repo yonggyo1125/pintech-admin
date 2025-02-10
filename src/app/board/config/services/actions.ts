@@ -12,6 +12,12 @@ import apiRequest from '@/app/global/libs/apiRequest'
 export const updateBoard = async (params, formData: FormData) => {
   let errors = {}
   let hasErrors = false
+  const form = {}
+  for (const [k, v] of formData.entries()) {
+    if (k.includes('$ACTION')) continue
+
+    form[k] = v
+  }
 
   // 필수항목 검증 S
   const requiredFields = {
@@ -31,7 +37,7 @@ export const updateBoard = async (params, formData: FormData) => {
 
   // 서버 요청 처리 S
   if (!hasErrors) {
-    const res = await apiRequest('/board/admin/config/save', 'POST', formData)
+    const res = await apiRequest('/board/admin/config/save', 'POST', form)
 
     if (res.status !== 200) {
       const result = await res.json()
